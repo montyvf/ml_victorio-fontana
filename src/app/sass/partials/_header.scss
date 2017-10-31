@@ -1,0 +1,75 @@
+@import './colors';
+@import './images';
+
+header {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 56px;
+    width: 100%;
+    color: $dark-grey;
+    background-color: $yellow;
+    border-top: 2px solid $lighter-grey;
+    z-index: 100;
+    .wrapper {
+        position: absolute;
+        margin: 0 auto;
+        padding: 8px 12px;
+        max-width: 980px;
+        height: calc(100% - 14px);
+        left: 0;
+        right: 0;
+        .header-logo {
+            position: absolute;
+            width: 53px;
+            height: 40px;
+            text-indent: -9999px;
+            background-image: $header-logo;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-color: transparent;
+            border: none;
+            outline: 0;
+        }
+        .header-search {
+            position: absolute;
+            width: calc(100% - 90px);
+            height: 40px;
+            right: 0;
+            input.search-input {
+                position: absolute;
+                margin: 0;
+                padding: 8px 12px;
+                width: calc(100% - 24px);
+                height: 22px;
+                font-size: 18px;
+                color: $dark-grey;
+                border: none;
+                border-radius: 4px;
+                outline: 0;
+                &::placeholder {
+                    color: $light-grey;
+                    font-weight: lighter;
+                }
+            }
+            input.search-input-submit {
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                width: 38px;
+                height: 38px;
+                right: 0;
+                text-indent: -9999px;
+                background-color: $lighter-grey;
+                background-image: $header-btn-search;
+                background-size: 18px;
+                background-repeat: no-repeat;
+                background-position: center;
+                border: none;
+                border-radius: 0 4px 4px 0;
+                outline: 0;
+            }
+        }
+    }
+}

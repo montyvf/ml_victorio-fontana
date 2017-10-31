@@ -1,0 +1,9 @@
+@import './partials/reset';
+@import './partials/header';
+@import './partials/main';
+
+$font-stack: Helvetica, sans-serif;
+
+body {
+  font: 100% $font-stack;
+}

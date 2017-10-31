@@ -1,0 +1,163 @@
+@import './colors';
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: $lighter-grey;
+}
+
+main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    .result-breadcrum {
+        position: relative;
+        display: block;
+        margin: 16px auto;
+        max-width: 980px;
+        height: 14px;
+        left: 0;
+        right: 0;
+        ul.result-breadcrum-list {
+            li {
+                display: inline;
+                font-size: 14px;
+                font-weight: lighter;
+                color: $light-grey;
+                span {
+                    margin: 0 4px;
+                }
+                &:last-of-type {
+                    font-weight: normal;
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .wrapper {
+        position: absolute;
+        margin: 0 auto;
+        padding: 16px 12px;
+        max-width: 956px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        border-radius: 5px;
+        .item-anchor {
+            position: relative;
+            display: flex;
+            width: 100%;
+            text-decoration: none;
+            .item-thumbnail-wrapper {
+                position: relative;
+                display: inline-block;
+                margin: 16px;
+                width: 180px;
+                height: 180px;
+                .item-thumbnail {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4px;
+                    overflow: hidden;
+                }
+            }
+            .item-details-wrapper {
+                position: relative;
+                display: inline-block;
+                margin: 0;
+                width: calc(100% - 244px);
+                color: $dark-grey;
+                .item-price {
+                    display: inline-block;
+                    margin: 16px 0;
+                    padding: 0;
+                    width: 80%;
+                    font-size: 24px;
+                    p {
+                        display: inline-block;
+                    }
+                    .free_shipping {
+                        position: relative;
+                        margin: 0 10px;
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-image: $free_shipping;
+                        background-size: 90%;
+                        background-position: bottom;
+                        background-repeat: no-repeat;
+                    }
+                }
+                .item-title {
+                    display: inline-block;
+                    width: 50%;
+                    font-size: 18px;
+                }
+                .item-city {
+                    display: inline-block;
+                    width: 20%;
+                    font-size: 14px;
+                    color: $light-grey;
+                }
+            }
+        }
+        .item-picture-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 680px;
+            .picture {}
+        }
+
+        .item-details-wrapper {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            vertical-align: top;
+            width: calc(100% - 680px);
+            color: $dark-grey;
+            .condition {
+                margin: 0 0 16px;
+                font-size: 14px;
+            }
+            .title {
+                font-weight: bold;
+                font-size: 24px;
+            }
+            .price {
+                margin: 32px 0;
+                font-size: 46px;
+            }
+            .btn.buy-btn {
+                margin: 0;
+                padding: 12px;
+                width: calc(100% - 32px);
+                font-size: 16px;
+                font-weight: lighter;
+                background-color: $regular-blue;
+                color: white;
+                border: none;
+                border-radius: 4px;
+            }
+        }
+        .item-description-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 680px;
+            h2 {
+                margin: 32px 0;
+            	color: $dark-grey;
+                font-size: 28px;
+                line-height: 32px;
+            }
+            p {
+                margin: 32px 0;
+                font-size: 16px;
+                font-weight: lighter;
+                color: $light-grey;
+            }
+        }
+    }
+}
