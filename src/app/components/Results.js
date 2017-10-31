@@ -31,7 +31,7 @@ export class Results extends React.Component {
 	render (){
 		var breadcrum = _.map(this.state.breadcrum, (result) => {
 			return (
-				<li key={result.id} className="">
+				<li key={ result.id } className="">
 					{ result.name }
 					<span> > </span>
 				</li>
@@ -47,7 +47,7 @@ export class Results extends React.Component {
 
 			return (
 				<li key={result.id} className="item">
-					<Link to={"items/" + result.id} className="item-anchor">
+					<Link to={"/item/" + result.id} className="item-anchor">
 						<div className="item-thumbnail-wrapper">
 							<img src={result.thumbnail} className="item-thumbnail"/>
 						</div>		

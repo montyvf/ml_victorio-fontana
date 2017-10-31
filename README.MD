@@ -1,3 +1,11 @@
-"npm start" para correr de forma local.
+README
 
-estilos solo para version enviada en PDF, no están incluidos los media queries para otras pantallas/dispositivos.
+Instalación:
+
+* npm install
+
+Para desarrollo local:
+
+* npm start
+
+NOTAS: Los estilos aplican solo para la versión enviada para el ejercicio. No incluyen media queries para otras pantallas/dispositivos

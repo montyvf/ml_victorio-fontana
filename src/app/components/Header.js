@@ -20,7 +20,7 @@ export class Header extends React.Component {
 
 	handleSubmit(event) {
 		var initialValue = this.props.initialValue;
-		browserHistory.push("/items" + this.state.value);
+		browserHistory.push("/items/" + this.state.value);
 	}
 
 	handleChange(event) {

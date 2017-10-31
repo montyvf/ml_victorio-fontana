@@ -1,7 +1,7 @@
-import React 						from "react";
-import Request 						from "superagent";
-import {Link, browserHistory} 		from "react-router";
-import _ 							from "lodash";
+import React 							from "react";
+import Request 							from "superagent";
+import { Link, browserHistory } 		from "react-router";
+import _ 								from "lodash";
 
 export class Details extends React.Component {
 
@@ -33,17 +33,24 @@ export class Details extends React.Component {
 		});
 		var urlDescription = "https://api.mercadolibre.com/items/" + this.props.params.id + "/description";
 		Request.get(urlDescription).then((response) => {
-			console.log(response);
 			this.setState({
-				description: response.body.plain_text
+				description: response.body.text
 			});
 		});
 	}
 
+	onComprar() {
+		alert("Thats all folks! (ir al verdadero ML para comprar)")
+	}
+
+	createMarkup() {
+		return {__html: this.state.description};
+	} 
+
 	render (){
 		var breadcrum = _.map(this.state.breadcrum, (result) => {
 			return (
-				<li key={result.id} className="">
+				<li key={ result.id } className="">
 					{ result.name }
 					<span> > </span>
 				</li>
@@ -64,18 +71,21 @@ export class Details extends React.Component {
 							<span>
 								{ this.state.result.condition == "new" && "Nuevo " }
 								{ this.state.result.condition == "used" && "Usado " }
-								{ this.state.result.sold_quantity > 1 && this.state.result.sold_quantity} 
-								{ this.state.result.sold_quantity == 1 && " - vendido"}
-								{ this.state.result.sold_quantity > 1 && " - vendidos"}
+								{ this.state.result.sold_quantity > 1 && this.state.result.sold_quantity } 
+								{ this.state.result.sold_quantity == 1 && " - vendido" }
+								{ this.state.result.sold_quantity > 1 && " - vendidos" }
 							</span>
 						</div>
 						<div className="title"> { this.state.result.title } </div>
 						<p className="price">$ { this.state.price } </p>
-						<button className="btn buy-btn">Comprar</button>
+						<button className="btn buy-btn" onClick={this.onComprar}>Comprar</button>
 					</div>
 					<div className="item-description-wrapper">
 						<h2>Descripción del producto</h2>
-						<p>{ this.state.description } </p>
+						<div 
+							className="item-description-content"
+							dangerouslySetInnerHTML={this.createMarkup()}
+						/>
 					</div>
 				</div>
 			</main>
